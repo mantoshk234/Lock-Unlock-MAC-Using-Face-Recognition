@@ -1,0 +1,1 @@
+This directory will contain all the data (captured images, training data) captured of your face
