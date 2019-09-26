@@ -1,6 +1,6 @@
 # KI-hacks-2-Lock-Unlock-MAC-Using-Face-Recognition
 
-Reference: https://github.com/saksham-jain/Lock-Unlock-Laptop-PC-Screen-Using-Face-Recognition
+Youtube Demo: https://youtu.be/3Y66c7gPQL8
 
 # How to install dependencies
  - cd Lock-Unlock-MAC-Using-Face-Recognition
@@ -14,4 +14,20 @@ Reference: https://github.com/saksham-jain/Lock-Unlock-Laptop-PC-Screen-Using-Fa
 
 - Run this script whenever you would like to launch the application to auto lock your system based on face recognition
     - python3 scripts/lock_unlock_face_recognition.py
+
+## Inspiration
+I have observed a few of my colleagues in the past, and also in present forget to lock their system while going somewhere. In some cases, this could not be safe.
+
+## What it does
+It locks the MAC once it detects that you are not sitting in front of your system.
+
+## What I learned
+Solutions do not need to be complex to solve a problem.
+
+## What's next for Lock-Unlock-MAC-Using-Face-Recognition
+Algorithm to decide lock time could be optimized and also this application could be made portable over other OS as well.
+
+# Reference
+https://github.com/saksham-jain/Lock-Unlock-Laptop-PC-Screen-Using-Face-Recognition
+
 
