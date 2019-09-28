@@ -1,4 +1,4 @@
-# KI-hacks-2-Lock-Unlock-MAC-Using-Face-Recognition
+# Lock-Unlock-MAC-Using-Face-Recognition
 
 Youtube Demo: https://youtu.be/3Y66c7gPQL8
 
