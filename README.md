@@ -19,7 +19,7 @@ Youtube Demo: https://youtu.be/3Y66c7gPQL8
 I have observed a few of my colleagues in the past, and also in present forget to lock their system while going somewhere. In some cases, this could not be safe.
 
 ## What it does
-It locks the MAC once it detects that you are not sitting in front of your system.
+It locks the MAC once it detects that you are not sitting in front of your system or a stranger is sitting in front of system.
 
 ## What I learned
 Solutions do not need to be complex to solve a problem.
