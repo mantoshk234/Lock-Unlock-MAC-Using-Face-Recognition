@@ -1,5 +1,5 @@
-import subprocess
 import time
+from ctypes import CDLL
 
 import Quartz
 import cv2
@@ -10,10 +10,10 @@ from utils.app_constants import *
 
 class SystemLocker:
     def __init__(self):
-        self.MAX_COUNTER_CORRECT = 5
+        self.MAX_COUNTER_CORRECT = 7
         self.counter_correct = 0  # counter variable to count number of times loop runs
 
-        self.MAX_COUNTER_WRONG = 3
+        self.MAX_COUNTER_WRONG = 5
         self.counter_wrong = 0
 
         self.recognizer = cv2.face.LBPHFaceRecognizer_create()
@@ -28,21 +28,24 @@ class SystemLocker:
         self.cam = cv2.VideoCapture(0)
 
     def lock_screen(self):
-        # https://www.reddit.com/r/Python/comments/2rrb29/need_a_way_to_lock_and_unlock_macbook_screen_with/
-        subprocess.call('/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend',
-                        shell=True)
+        # https://gist.github.com/pudquick/350ba6411df3be77d32a
+        # immediately lock the screen of a Mac running OS X, regardless of security settings,
+        # screensaver settings, or Fast User Switch settings.
+        loginPF = CDLL('/System/Library/PrivateFrameworks/login.framework/Versions/Current/login')
+        loginPF.SACLockScreenImmediate()
 
     def is_mac_locked(self):
         d = Quartz.CGSessionCopyCurrentDictionary()
-        # If the dictionary has CGSSessionScreenIsLocked = 1, the screens are locked.
+        # If the dictionary has CGSSessionScreenIsLocked = 1, the screen is locked.
         is_locked = d.get("CGSSessionScreenIsLocked", 0)
-        return False if is_locked == 0 else True
+        return is_locked
 
     def lock_unlock_system(self):
         while True:
             if self.is_mac_locked():
                 self.counter_correct = self.counter_wrong = 0
-                time.sleep(config.CFG[LOCK_TIME] * 2)
+                time.sleep(config.CFG[LOCK_TIME] * 4)
+                print("System is locked")
                 continue
 
             _, im = self.cam.read()
@@ -86,7 +89,7 @@ class SystemLocker:
             if cv2.waitKey(100) & 0xFF == 27:
                 break
 
-            time.sleep(config.CFG[LOCK_TIME])
+            time.sleep(config.CFG[LOCK_TIME] // 2)
 
         self.cam.release()
 
