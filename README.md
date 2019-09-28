@@ -2,6 +2,8 @@
 
 Youtube Demo: https://youtu.be/3Y66c7gPQL8
 
+Python3.6 is required.
+
 # How to install dependencies
  - cd Lock-Unlock-MAC-Using-Face-Recognition
  - sudo -H pip3 install -r requirements.txt
