@@ -2,7 +2,9 @@
 
 Youtube Demo: https://youtu.be/3Y66c7gPQL8
 
-Python3.6 is required.
+Developed on:
+1. Python3.6
+2. macOS: High Sierra (10.13.5)
 
 # How to install dependencies
  - cd Lock-Unlock-MAC-Using-Face-Recognition
