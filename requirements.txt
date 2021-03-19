@@ -1,7 +1,7 @@
 numpy==1.17.2
 opencv-contrib-python==4.1.1.26
 opencv-python==4.1.1.26
-Pillow==2.2.1
+Pillow==8.1.1
 pyobjc-core==5.2
 pyobjc-framework-Cocoa==5.2
 pyobjc-framework-Quartz==5.2
